@@ -1,0 +1,36 @@
+echo "calculator "
+echo "enter a: "
+read a
+echo "enter b: "
+read b
+echo "1. ADDITION 2. SUBTRACTION 3. MULTIPLICATION 4. DIVISION"
+echo "enter option"
+read option
+echo "option=$option"
+case $option in
+
+1) echo "case 1"
+sum=`expr $a + $b`
+echo "sum: $sum"
+;;
+
+2) echo "case 2"
+diff=`expr $a - $b`
+echo "diff : $diff"
+;;
+
+
+3) echo "case 3"
+prod=`expr $a * $b`
+echo "product: $prod"
+;;
+
+4) echo "case 4"
+quotient=`expr $a / $b`
+echo "quo: $quotient"
+;;
+
+*) echo "invalid"
+;;
+
+esac
