@@ -1,0 +1,46 @@
+# include <stdio.h>
+
+
+int main(){
+int a[10][10],b[10][10],mul[10][10],r,enc[10],i,j,k;
+printf("Enter the Size : ");
+scanf("%d",&r);
+printf("Enter the First matrix Elements =\n");
+for(i=0; i<r; i++){
+    for(j=0; j<r; j++){
+        scanf("%d",&a[i][j]);
+    }
+}
+
+printf("Enter the Second matrix Elements =\n");
+for(i=0; i<r; i++){
+    for(j = 0; j<1; j++){
+        scanf("%d",&b[i][0]);
+    }
+}
+for (i=0; i<r;i++){
+    for(j=0; j<1;j++){
+        mul[i][j]=0;
+        for(k=0; k<r; k++){
+            mul[i][j] += a[i][k] * b[k][j];
+        }
+
+        enc[i]= mul[i][j]%26;
+    }
+}
+printf("multiple matrix :");
+for(i=0; i<r; i++){
+    for(j=0; j<1; j++){
+        printf("%d \t",mul[i][j]);
+    }
+    printf("\n");
+}
+printf("encripted matrix");
+
+for(i=0; i<r; i++){
+   printf("%d ", enc[i]);
+
+}
+printf("\n");
+
+}
