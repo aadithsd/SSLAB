@@ -1,0 +1,19 @@
+echo "welcome to shell scripting"
+echo "my current shell is $SHELL"
+echo "system security lab"
+echo "display todays date"
+date
+echo "my mac (physical address)"
+getmac
+echo "my system host name is"
+hostname
+echo "mapping to logical to physical address using arp"
+arp -a
+echo "display all user names" 
+uname
+echo "current path is "
+pwd
+echo "interface configuration"
+ifconfig
+echo "ping a website"
+ping www.gmail.com
