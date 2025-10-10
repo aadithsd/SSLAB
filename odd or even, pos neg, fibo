@@ -1,0 +1,29 @@
+echo "enter n: "
+read n
+echo "n=$n"
+if [ `expr $n % 2` -eq 0 ]
+then
+echo "$n is even number "
+else
+echo "$n is odd number "
+fi
+if [ $n -gt 0 ]
+then
+echo "positive number"
+else
+echo "negative number"
+fi
+echo " ----- fibonacci series of first $n numbers. -----"
+f=0
+s=1
+c=1
+echo $f
+echo $s
+while [ $c -lt $n ]
+do
+t=`expr $f + $s`
+f=$s
+s=$t
+c=`expr $c + 1`
+echo $t
+done
