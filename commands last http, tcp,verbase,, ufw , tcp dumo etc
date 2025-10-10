@@ -2,7 +2,7 @@ sudo apt update
  1940  sudo ufw allow 22/tcp
  1941  sudo ufw allow http
  1942  sudo ufw default deny incoming
- 1943  sudo ufw stastus verbase
+ 1943  sudo ufw status verbase
  1944  sudo nmap -sn 192.168.1.0/24
  1945  sudo nmap -p 80 192.168.1.1
  1946  sudo nmap -Pn  -p 80 192.168.1.1
