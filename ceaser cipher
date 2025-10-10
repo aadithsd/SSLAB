@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main(){
+    char text[100],ch;
+    int key,i;
+    printf("enter key");
+    scanf("%d",&key);
+    printf("enter text");
+    scanf("%s",text);
+    for(i=0;text[i]!='\0';i++){
+        ch=text[i];
+        if(ch>='a'&&ch<='z'){
+            ch=(ch-'a'+key)%26+'a';
+            }else if(ch>='A'&&ch<='Z'){
+            ch=(ch-'A'+key)%26+'A';
+            }
+            text[i]=ch;
+
+
+            }
+            printf("encrypted %s\n",text);
+            for(i=0;text[i]!='\0';i++){
+                ch=text[i];
+        if(ch>='a'&&ch<='z'){
+            ch=(ch-'a'-key+26)%26+'a';
+            }else if(ch>='A'&&ch<='Z'){
+            ch=(ch-'A'-key+26)%26+'A';
+            }
+            text[i]=ch;
+            }
+            printf("decrypted %s\n" ,text);
+            return 0;
+}
+
+
+
+
+
