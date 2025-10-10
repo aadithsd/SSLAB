@@ -1,0 +1,35 @@
+echo "welcome to shell scripting"
+echo "my current shell is $SHELL"
+echo "enter a , b, c"
+read a 
+read b
+read c
+echo "a=$a"
+echo "b=$b"
+echo "c=$c"
+sum=`expr $a + $b + $c`
+echo "sum is $sum"
+if [ $a -gt $b ]
+then
+echo "$a is greatest"
+else
+echo "$b is greatest"
+fi
+i=0
+echo "displaying numbers from 1 to 5"
+while [ $i -le 5 ]
+do
+echo $i
+i=`expr $i + 1`
+done
+echo "displaying numbers from 1 to 10"
+j=1
+until [ $j -gt 10 ]
+do
+echo $j
+j=`expr $j + 1`
+done
+for((l=5;l<10;l++))
+do
+echo $l
+done
