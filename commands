@@ -1,0 +1,31 @@
+sudo apt update
+ 1940  sudo ufw allow 22/tcp
+ 1941  sudo ufw allow http
+ 1942  sudo ufw default deny incoming
+ 1943  sudo ufw stastus verbase
+ 1944  sudo nmap -sn 192.168.1.0/24
+ 1945  sudo nmap -p 80 192.168.1.1
+ 1946  sudo nmap -Pn  -p 80 192.168.1.1
+ 1947  man nmap
+ 1948  nmap -sv -p 80,443 192.168.1.1
+ 1949  nmap -Pn -sV -p 80,443 192.168.1.1
+ 1950  sudo tcpdump
+ 1951  echo $SHELL
+ 1952  tsh
+ 1953  pw
+ 1954  ls
+ 1955  ma
+ 1956  ls
+ 1957  gedit
+ 1958  ls
+ 1959  bash shell.sh
+ 1960  ls
+ 1961  cd aadith
+ 1962  ls
+ 1963  bash shell.sh
+ 1964  history
+ 1965  ICTS-MYS-021045
+ 1966  gedit
+ 1967  bash sum.sh
+ 1968  gedit sum.sh
+ 1969  bash sum.sh
