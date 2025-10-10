@@ -1,0 +1,20 @@
+mkdir -p lab/file
+mkdir -p security/cyber
+sudo chown -R root: root security
+ls -ls security
+ sudo useradd -m -s /bin/bash security
+ sudo passwd security
+sudo chage -M 90 -m 10 security
+
+chmod 755 myfile.sh
+
+
+u - user
+g - group
+o - others
+sudo chmod u+x myscript.sh     # Add execute for user
+sudo chmod g-w mydata.txt      # Remove write from group
+sudo chmod o+r report.txt      # Add read for others
+sudo chmod a+rwx test.sh       # Give everyone all permissions
+
+  
