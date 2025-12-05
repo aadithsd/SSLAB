@@ -1,0 +1,84 @@
+System Security Lab Commands and Meanings
+hostname
+Shows or sets the system’s host name.
+uname
+Displays system information like OS name, kernel version, hardware details.
+logname
+Shows the name of the user logged into the system.
+set computername
+Used to view or change the computer name.
+finger user - asas
+Shows info about a user such as login status and home directory.
+cat /etc/issue
+Displays Linux system identification before login prompt.
+cat /etc/*-release
+Shows detailed Linux distribution info.
+cat /etc/lsb-release
+Displays LSB-specific distro info.
+cat /etc/os-release
+Shows standard OS information.
+ifconfig
+Displays or configures network interface settings like IP, MAC.
+route -n
+Displays kernel routing table in numeric format.
+route print
+Shows current routing table including gateways.
+last -a
+Lists recent logins with hostname/IP.
+arp -a
+Displays ARP table with IP → MAC.
+netstat -ano
+Shows all active network connections and ports.
+netstat -tulnp
+Displays TCP/UDP connections.
+ELF COMMANDS 
+readelf -h /bin/ls
+Displays ELF header of file.
+readelf -S /bin/ls
+Displays section headers.
+readelf -l /bin/ls
+Displays program headers.
+readelf -s /bin/ls
+Displays symbol table.
+readelf -x /bin/ls
+Shows hex dump of file sections.
+objdump -x /bin/ls
+Displays all header information.
+strings /bin/ls
+Prints readable ASCII strings inside binary.
+checksec --file=/bin/ls
+Shows security protections of binary.
+gdb /bin/ls
+Opens executable in GDB debugger.
+ps -eo pid,%cpu,args | sort -k2 -r | head -n 11
+Top 11 CPU-consuming processes.
+ps -eo pid,%mem,args | sort -k2 -r | head -n 11
+Top 11 memory-consuming processes.
+who | wc -l
+Counts number of logged-in users.
+hostname -I
+Shows all IP addresses assigned to host.
+ip route | awk '/default/ {print $3}'
+Extracts default gateway.
+grep "nameserver" /etc/resolv.conf | awk '{print $2}'
+Displays DNS nameserver IPs.
+uptime | awk '{print $1, $2, $3}' | sed 's/,//'
+Prints first 3 uptime fields.
+uptime | awk '{print $10, $11, $12}'
+Prints load averages.
+find / -type f | wc -l
+Counts all regular files.
+df -h | awk 'NR>1 {print $5}'
+Shows disk usage percentage.
+uname -m
+Shows hardware architecture.
+find /var/log -name "*.log"
+Lists all .log files.
+cat /var/log/kern.log
+Displays kernel log.
+cat /proc/sys/kernel/randomize_va_space
+Shows ASLR setting.
+ip a
+Shows all network interfaces & IPs.
+ip link show
+Shows link-layer information.
