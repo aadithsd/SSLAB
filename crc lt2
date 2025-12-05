@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+
+
+void xorOperation(char temp[], char key[], int keyLen) {
+    for (int i = 0; i < keyLen; i++) {
+        if (temp[i] == key[i])
+            temp[i] = '0';
+        else
+            temp[i] = '1';
+    }
+}
+void computeCRC(char data[], char key[], char crc[]) {
+    int dataLen = strlen(data);
+    int keyLen  = strlen(key);
+
+    char temp[100];
+    for (int i = 0; i < dataLen; i++)
+        temp[i] = data[i];
+
+    for (int i = 0; i < keyLen - 1; i++)
+        temp[dataLen + i] = '0';
+
+    temp[dataLen + keyLen - 1] = '\0';
+    for (int i = 0; i < dataLen; i++) {
+        if (temp[i] == '1') {
+            xorOperation(&temp[i], key, keyLen);
+        }
+    }
+    for (int i = 0; i < keyLen - 1; i++) {
+        crc[i] = temp[dataLen + i];
+    }
+    crc[keyLen - 1] = '\0';
+}
+
+int main() {
+    char data[50], key[20], crc[20];
+
+    printf("Enter data bits: ");
+    scanf("%s", data);
+
+    printf("Enter divisor (key): ");
+    scanf("%s", key);
+    computeCRC(data, key, crc);
+    printf("CRC value: %s\n", crc);
+    printf("Transmitted codeword: %s%s\n", data, crc);
+
+    return 0;
+}
